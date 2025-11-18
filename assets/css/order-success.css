@@ -1,0 +1,44 @@
+.order-success {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.success-icon {
+    margin-bottom: 30px;
+}
+
+.success-icon svg {
+    width: 80px;
+    height: 80px;
+}
+
+.success-message h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.success-message .lead {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.order-details {
+    background: var(--card-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 400px;
+}
+
+body.dark-theme .order-details {
+    background: var(--card-dark);
+}
+
+.success-actions {
+    margin-top: 30px;
+}
+
+.success-actions .btn {
+    margin: 0 10px;
+}

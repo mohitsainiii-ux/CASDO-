@@ -1,0 +1,116 @@
+.auth-page {
+    padding: 80px 0;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.auth-form {
+    background: var(--card-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    width: 100%;
+    max-width: 400px;
+}
+
+body.dark-theme .auth-form {
+    background: var(--card-dark);
+    box-shadow: 0 10px 30px var(--shadow-dark);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-blue);
+}
+
+.btn-block {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+body.dark-theme .auth-links {
+    border-top-color: var(--border-dark);
+}
+
+.auth-links a {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+body.dark-theme .form-group input {
+    background: var(--card-dark);
+    border-color: var(--border-dark);
+    color: var(--text-light);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn-google {
+    background: #db4437;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-google:hover {
+    background: #c33d2e;
+}
