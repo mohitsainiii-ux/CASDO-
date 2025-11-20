@@ -1,5 +1,6 @@
 <?php
-require_once 'header.php';
+require_once 'db.php';
+require_once 'functions.php';
 
 // Redirect if cart is empty
 $cartItems = getCartItems($pdo);
@@ -56,6 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+<?php require_once 'header.php'; ?>
 
 <section class="checkout-page">
     <div class="container">

@@ -1,5 +1,6 @@
 <?php
-require_once 'header.php';
+require_once 'db.php';
+require_once 'functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
@@ -54,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+<?php require_once 'header.php'; ?>
 
 <section class="auth-page">
     <div class="container">
