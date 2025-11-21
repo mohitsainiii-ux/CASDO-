@@ -2,10 +2,22 @@
 session_start();
 require_once '../db.php';
 
-// Check if user is logged in and is admin
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    header('Location: admin-login.php');
-    exit;
+// Allow public access to login and register pages
+$publicPages = ['admin-login.php', 'admin-register.php'];
+$currentPage = basename($_SERVER['PHP_SELF']);
+
+// If current page is a public page and an admin is already logged in, send them to dashboard
+if (in_array($currentPage, $publicPages)) {
+    if (isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'admin') {
+        header('Location: dashboard.php');
+        exit;
+    }
+} else {
+    // For all other admin pages require an admin session
+    if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
+        header('Location: admin-login.php');
+        exit;
+    }
 }
 ?>
 <!DOCTYPE html>

@@ -40,14 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare('INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)');
         $role = 'admin';
         if ($stmt->execute([$name, $email, $hashed, $role])) {
-            $userId = $pdo->lastInsertId();
-            $_SESSION['user_id'] = $userId;
-            $_SESSION['user_name'] = $name;
-            $_SESSION['user_email'] = $email;
-            $_SESSION['user_role'] = $role;
-
-            header('Location: dashboard.php');
-            exit;
+            // Do NOT auto-login or redirect. Show a success message and prompt to login.
+            $success = 'Registration successful. Please <a href="admin-login.php">login</a>.';
+            // Clear POST to avoid resubmission and clear form values
+            $_POST = [];
         } else {
             $errors[] = 'Registration failed. Please try again.';
         }
